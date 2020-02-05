@@ -1,11 +1,25 @@
 import _ from 'lodash'
 
-function component() {
-    const element = document.createElement('div');
+function car(brand, colour, model) {
+    this.marca = brand;
+    this.color = colour;
+    this.modelo = model;
 
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+    function turnOn() {
+        this.turnedOn = false;
+    }
 
-    return element;
+    function turnOff() {
+        this.turnedOff = true;
+    }
 }
 
-document.body.appendChild(component());
+let autoNuevo = new car('Fiat', 'Red', 600);
+
+function onOrOff() {
+    if (car.turnOn == true) {
+        console.log('The car is turned on!')
+    } else {
+        console.log('The car is turned off!')
+    }
+}
